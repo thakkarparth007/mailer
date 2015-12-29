@@ -90,16 +90,3 @@ than = of course)
 `$attachments` is a special variable - its value should be a semicolon separated
 list of paths that lead to valid files. These files will be attached to the
 mail.
-
-Testing:
-========
-
-As of now, the code is semi-automatically tested. The test suite does the job of
-sending the mails and creating preview files, and in case there is any problem
-in that then some tests will fail. However, if the mails are being sent correctly,
-but not being received as desired, or if there is no error in the preview file creation,
-but the files aren't being created properly (say, badly formatted or something like that),
-then in that case, the test suite cannot do anything. Hence, THAT part of the
-testing is manual.
-
-Please refer to individual test files for further details regarding their behavior.
