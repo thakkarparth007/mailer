@@ -50,18 +50,19 @@ The first two files are required. The last file is optional. If the `subject.txt
 Format of a `.ml` file:
 =======================
 
-First line contains the list of fields (tab separated) - the variables that 
-are referred to in the mmtpl file. The first field is invariably the `email` 
-field. The following fields can be anything.
+The file is a tab separated file. (As of now, tabs in the values are not allowed. Will be changed soon.)
+First line contains the list of fields - the variables that 
+are referred to in the template file. One of the fields has to be called
+`email`. This field contains the email addresses of the receivers.
 
 If files are to be attached, have a field called `$attachments`, and the corresponding
 entry in each row can be an empty string or a semicolon-separated list of paths.
 Each path must lead to a valid file.
 
-The next line is left blank
+From the next line, each row will contain the values of the appropriate fields,
+and this data will be used to make personalised emails.
 
-From the third line, each row will contain the values of the appropriate fields,
-and this data will be used to make personalised emails
+Empty lines (lines having only, and only whitespace characters) are ignored. 
 
 Example:
 	

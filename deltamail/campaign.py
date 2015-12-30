@@ -347,9 +347,11 @@ def CampaignFactory(from_addr, subject, mailing_list,
 
         headers, rows = contents[0].split("\t"), contents[1:]
 
-        if headers[0] != "email":
-            raise Exception("First field of mailing list file is "
+        if "email" not in headers:
+            raise Exception("One of the fields of mailing list file is "
                             "required to be `email`")
+
+        email_idx = headers.index("email")
 
         mailing_list = []
         for row in rows:
@@ -359,7 +361,7 @@ def CampaignFactory(from_addr, subject, mailing_list,
             if len(row) != len(headers):
                 raise Exception("%s: Mismatch in number of columns." % (mailing_list_file,))
             mailing_list.append({
-                "email": row[0],
+                "email": row[email_idx],
                 "variables": dict([
                     (headers[i], row[i])
                     for i in range(1, len(headers))
