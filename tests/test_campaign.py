@@ -1,22 +1,5 @@
 """
 Code to test the deltmail.campaign module
-
-This test case sends the following mails:
-    1. "BulkMail : Greetings from Festember" to mojo@jojo.com and phineas@ferb.com
-        Both email ids appear in the mail (like CC).
-    2. "TransactionMail : Greetings from Festember" to job@bob.com and pop@bob.com
-        Two *separate* mails are sent. Unlike CC.
-    3. "CampaignFactoryBulk : Greetings from Festember" to FOB@bob.com, pop@bob.com
-        All email ids appear in the mail (like CC).
-    4. "CampaignFactoryTransaction : Greetings from Festember" to job@bob.com, pop@bob.com,
-        sop@bob.com. Three *separate* mails are sent. Unlike CC.
-
-    In #3, The email body will look incomplete, because the name and message
-    fields in the template.mmtmpl file haven't been filled (because it's a BulkMail).
-
-    Other than these, the test suite also creates preview mails for each of the
-    above mails preview-mails directory. Each Test class creates preview mails
-    under the /preview-mails/<Test-class-name> directory.
 """
 
 import sys
